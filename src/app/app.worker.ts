@@ -1,6 +1,6 @@
 /// <reference lib="webworker" />
 
-import { IRow } from "./interfaces";
+import { IRow } from './interfaces';
 
 function generateObjectsArray(length: number): IRow[] {
   const objectsArray: IRow[] = [];

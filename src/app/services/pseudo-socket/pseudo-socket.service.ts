@@ -1,24 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PseudoSocketService {
-  private messageSubject = new Subject<string>();
-  private formData = {}
-  private additionalArrayIds = []
+  private formData = {};
+  private additionalArrayIds: string[] = [];
 
-  public workerTest: any = null
+  public worker: any = null;
 
-  public getMessageStream(): Observable<string> {
-    return this.messageSubject.asObservable();
-  }
+  public setFormData(formData: object): void {
+    this.formData = formData;
 
-  public setFormData(data: any): void {
-    this.formData = data;
-
-    this.workerTest.postMessage(JSON.stringify(data))
+    this.worker.postMessage(JSON.stringify(formData));
   }
 
   public getFormData(): object {
@@ -26,15 +20,14 @@ export class PseudoSocketService {
   }
 
   public setWorker(worker: any): void {
-    this.workerTest = worker
+    this.worker = worker;
   }
 
-  public setAdditionalArrayIds(additionalArrayIds: any): void {
-    this.additionalArrayIds = additionalArrayIds
+  public setAdditionalArrayIds(additionalArrayIds: string[]): void {
+    this.additionalArrayIds = additionalArrayIds;
   }
 
-  public getAdditionalArrayIds() {
-    return this.additionalArrayIds
+  public getAdditionalArrayIds(): string[] {
+    return this.additionalArrayIds;
   }
 }
-

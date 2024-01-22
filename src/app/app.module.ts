@@ -12,13 +12,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     RowComponent,
     RowChildComponent,
-    FilterFormComponent
+    FilterFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
