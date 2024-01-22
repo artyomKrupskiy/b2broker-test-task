@@ -1,0 +1,23 @@
+<div class="table">
+  <div class="table-header">
+    <div class="table-cell">id</div>
+    <div class="table-cell">int</div>
+    <div class="table-cell">float</div>
+    <div class="table-cell">color</div>
+    <div class="table-cell">child</div>
+  </div>
+
+  <div class="table-row" *ngFor="let row of rowData">
+    <div class="table-cell">{{ row.id }}</div>
+    <div class="table-cell">{{ row.int }}</div>
+    <div class="table-cell">{{ row.float }}</div>
+    <div class="table-cell" [ngStyle]="{ 'background-color': row.color }">{{ row.color }}</div>
+    <div class="table-cell">
+        <div class="table-header">
+            <div class="table-cell">id</div>
+            <div class="table-cell">color</div>
+        </div>
+        <app-row-child class="row-child" [rowChild]="row.child"></app-row-child>
+    </div>
+  </div>
+</div>

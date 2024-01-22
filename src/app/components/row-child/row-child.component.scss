@@ -1,0 +1,13 @@
+.table-row {
+  display: flex;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.table-cell {
+  flex: 1;
+  border: 1px solid #ddd;
+  padding: 8px;
+  box-sizing: border-box;
+}
